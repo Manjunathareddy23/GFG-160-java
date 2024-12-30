@@ -1,0 +1,28 @@
+class Solution 
+{
+    public int getSecondLargest(int[] arr)
+    {
+        // Code Here
+        int temp;
+        if(arr == null || arr.length<2)
+        {
+            return -1;
+        }
+        int la=-1;
+        int sla=-1;
+        
+        for ( int num:arr)
+        {
+            if(num>la)
+            {
+                sla=la;
+                la=num;
+            }
+            else if(num>sla && num<la)
+            {
+               sla=num; 
+            }
+        }
+        return sla== -1?-1: sla;
+    }
+}
